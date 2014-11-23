@@ -283,13 +283,13 @@ Find the probability you end up wearing
 
 __Rules for probability__:
 
-- P(a AND b) = P(a) * P(b)
+- $P(a \bigwedge b) = P(a) * P(b)$
 
-- P(a OR b) = P(a) + P(b) - P(a AND b)
+- $P(a \bigvee b) = P(a) + P(b) - P(a \bigwedge b)$
 
 #### a. 2 blue socks
 
-P(1st Blue AND 2nd Blue)
+$P(1st Blue \bigwedge 2nd Blue)$
 
 ```{r}
 {
@@ -309,7 +309,7 @@ P(1st Blue AND 2nd Blue)
 
 #### b. No gray socks
 
-P(1st not gray AND 2nd not gray)
+$P(\neg 1st gray \bigwedge \neg 2nd gray)$
 
 ```{r}
 {
@@ -328,11 +328,11 @@ P(1st not gray AND 2nd not gray)
 
 #### c. At least 1 black sock
 
-P(1st Black **OR** 2nd Black)
+$P(1st Black \bigvee 2nd Black)$
 
 but can be reduced further to (using De Morgan's law)
 
-1 - P(1st NOT Black **AND** 2nd NOT Black)
+$1 - P(\neg 1st Black \bigwedge \neg 2nd Black)$
 
 ```{r}
 {
@@ -355,11 +355,11 @@ Since there is no green socks, the probability is Zero
 
 #### e. Matching socks
 
-P(Matching Blue **OR** Matching Gray **OR** Matching Black)
+$P(Blue_{Matching} \bigvee Gray_{Matching} \bigvee Black_{Matching})$
 
 reduced to (using De Morgan's law)
 
-1 - P(NOT Matching Blue **AND** NOT Matching Gray **AND** NOT Matching Black)
+$1 - P(\neg Matching Blue \bigwedge \neg Matching Gray \bigwedge \neg Matching Black)$
 
 ```{r}
 {
@@ -392,14 +392,35 @@ than two bags.
 #### a. Build a probability model, compute the average revenue per passenger, and compute the
 corresponding standard deviation.
 
-```{r fig.width=4 }
+```{r}
 {
+  observations = c(rep(25, times=34), rep(35, times=12), rep(0, times=(100 - 34 - 12)))
   
+  mean <- mean(observations)
+  sd <- sd(observations)
+  
+  cat("Mean is: ")
+  print(mean)
+  cat("Standard deviation is: ")
+  print(sd)
+}
+{
+  print("How raw data look as histogram")
+  hist(observations, prob=TRUE)
+  lines(density(observations))
+}
+{
+  print("How a simulation with calculated standard deviation and mean")
+  sim <- rnorm(n=100, mean=mean, sd=sd) 
+  hist(sim, prob=TRUE)
+  lines(density(sim))
 }
 ```
 
 #### b. About how much revenue should the airline expect for a flight of 120 passengers? With what
 standard deviation? Note any assumptions you make and if you think they are justified.
+
+
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
