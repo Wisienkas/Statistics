@@ -1,0 +1,115 @@
+#####
+# Exercises
+#####
+
+
+# Exercise 3.2 #
+
+Desc:
+	Area under the curve, 2. what percent of a standard normal distribution N(u = 0, sig = 1) is
+		found in each region?
+	Be sure to draw a graph.
+
+Answer:
+	
+	# a: Z > -1.13
+		
+	> 1 - pnorm(-1.13)
+	[1] 0.8707619
+
+	# b: Z < 0.18
+	
+	> pnorm(0.18)
+	[1] 0.5714237
+
+	# c: Z > 8
+	
+	> 1 - pnorm(8)
+	[1] 6.661338e-16
+
+	# d: |Z| < 0.5
+	> pnorm(0.5) - pnorm(-0.5)
+	[1] 0.3829249
+
+# Exercise 3.4 #
+
+Desc:
+	Triathlon times, Part 1 in triathlons, it is common for racers to be placed into age and gender
+		groups. Friends Leo and Mary both completed the Hermosa Beach Triathlon, where Leo completed
+		in the men, Ages 30-34 group while Mary competed in the Women, Ages 25-29 Group
+	Leo completed the race in 1:22:28 ( 4948 seconds ), while Mary completed the race in 1:31:53(5513s).
+	Obviously Leo finished faster, but they are curious about how they did within their respective
+		groups:
+
+	The finishing times of the men Ages 30-34 group has a mean of 4313 seconds with a sd of 583 seconds
+	The finishing time of women 25-29 group has a mean of 5263 seconds with sd 807 seconds.
+
+	The distribution of finishing times for both groups are approximately Normal.
+
+Answer:
+	
+	# a: Write down the short-hand for these two normal distributions.
+	
+	N(mean = 4313, sd = 583) for Men
+	N(mean = 5261, sd = 807) for Women
+
+	# b: What are the Z scores for Leo's and Mary's finshing times?
+	# Lower is better
+	
+	For Leo
+	>(4948 - 4313) / 583 = 1.089194
+	
+	For Mary
+	>(5513 - 5261) / 807 = 0.3122677
+	#	What do these Z scores tell you?
+	It tells me that in their groups Mary did better than Leo.
+ 
+	# c: Did Leo or Mary rank better in their respective groups? Explain your reasoning
+	
+	> Both did worse than the average
+
+	# d: What percent of the triathletes did Leo finish faster than in his group?
+	
+	> 1 - pnorm(4948, mean = 4313, sd = 583) 
+	[1] 0.1380342
+
+	# e: What percent of the triathletes did Mary finish faster than in her group?
+	
+	> 1 - pnorm(5513, mean = 5261, sd = 807)
+	[1] 0.3774186
+
+	# f: if the distribution of finishing time are not nearly normal, would your answers to parts(b)
+	# e: change? explain reasoning
+	
+	Well the whole normal distribution would be invalid and depending on the graph you would have a 
+		different answer 
+
+# Exercise 3.14 #
+
+Desc:
+	Find the SD. Find the standard deviation of the distribution in the following situations.
+	
+Answer:
+	
+	# a: MENSA is an organization whose members have IQs in the top 2% of the population. IQs are
+	#	normally distributed with mean 100, and the minimum IQ score required for admission to MENSA
+	#	is 132
+	
+	>qnorm(0.02) * -1
+	so Z = 2.053749
+	since "Z = (x - mean) / sd" it can be rewritten to "sd = (x - mean) / sd"
+	
+	> (132 - 100) / 2.053749
+	sd = 15.58126
+	
+	# b: Cholesterol levels for women aged 20 to 34 follow an approximately normal distribution with
+	#	mean 185 milligrams per deciliter (mg/dl). Women with cholesterol levels above 220 mg/dl 
+	#	are considered to have high cholesterol and about 18.5% of women fall into this category.
+	
+	>qnorm(0.185) * -1
+	Z = 0.8964734
+	
+	> (220 - 185) / 0.8964734
+	sd = 39.04187
+
+	

@@ -1,0 +1,232 @@
+# Lab 1 #
+Name: Nikolaj Schaldemose Reibke <nirei12@student.sdu.dk>
+
+# Exercise 1 #
+
+Desc: 
+	How many cases are there in this data set? 
+	For each variable, identify its data type.
+
+Answer:
+
+	>dim(cdc) > [1] 20000	9
+	Appears there are 20000 Observations and 9 variables
+	>names(cdc) 
+
+	genhlth		:	Ordinal
+	exerany		:	Regular Categorial
+	htlhplan	:	Regular Categorial
+	smoke100	:	Regular Categorial
+	height		:	Discrete
+	weight		:	Discrete
+	wtdesire	:	Discrete
+	age			:	Discrete
+	gender		:	Regular Categorial
+
+# Exercise 2 #
+
+Desc: 
+	a)	Create a numerical summary for height and age, and compute the interquartile range for each.
+	b)	Compute the relative frequency distribution for gender and exerany.
+	c)	How many males are in the sample?
+	d)	What proportion of the sample reports being in excellent health?
+
+Answer:
+	a)	Create a numerical summary for height and age, and compute the interquartile range for each.
+	>summary(cdc$height)
+
+	Min		:	48
+	1Q		:	64
+	Median	:	67
+	Mean	:	67.18
+	3Q		:	70
+	Max		:	93
+
+	>summary(cdc$age)
+	
+	Min		:	18
+	1Q		:	31
+	Median	:	43
+	Mean	:	45.07
+	3Q		:	57
+	Max		:	99
+
+----------------
+	b)	Compute the relative frequency distribution for gender and exerany.
+	>table(cdc$gender) / (20000 / 100)
+
+	Male	:	47.845 %
+	Female	:	52.155 %
+
+	>table(cdc$exerany)
+
+	exercised last month(1)		:	74.57 %
+	no exercise last month(0)	:	25.43 %
+
+----------------
+	c)	How many males are in the sample?
+	>table(cdc$gender)
+
+	Males	:	9569
+
+----------------
+	d)	What proportion of the sample reports being in excellent health?
+	>sum(cdc$genhlth == "excellent") / 20000
+	
+	Proportion : 0.23285 to 1
+	
+# Exercise 3 #
+
+Desc: What does the mosaic plot reveal about smoking habits and gender?
+
+Answer:
+	>mosaicplot(table(cdc$gender, cdc$smoke100))
+
+	Reveals that according to the participants a little higher portion of the males smoke
+
+# Exercise 4 #
+
+Desc: 
+	Create a new object called under23_and_smoke that contains all observations of respondents under
+	the age of 23 that have smoked 100 cigarettes in their lifetime.
+	Write the command you used to create the new objec as the answer to this exercise.
+
+Answer:
+	> under23_and_smoke <- subset(cdc, cdc$age < 23 & cdc$smoke100 == 1)
+
+	under23_and_smoke contains 620 Observations
+
+# Exercise 5 #
+
+Desc: 
+	What does this box plot show?
+	Pick another categorial variable from the data set and see how it relates to BMI. 
+	List the variables you chose, wy you might think it would have a relationship to BMI,
+		and indicate what the figure seems to suggest.
+
+Answer: 
+	>boxplot(bmi ~ cdc$genhlth)
+
+	Shows that the BMI is negatively associated with the general health
+
+	>boxplot(bmi ~ cdc$age)
+
+	Shows how bmi effect people in different stages of life
+	This reveals that People in their best age(30 to 70) seem to have a larger BMI than the really
+		old people and the young people in generel of course.
+
+#####
+# ON YOUR OWN (OYO)
+#####
+
+# OYO 1 #
+
+Desc: 
+	Make a scatterplot of weight versus desired weight.
+	Describe the relationship between these two variables.
+
+Answer:
+	>plot(cdc$weight, cdc$wtdesire)
+
+	Shows that theres a trend between the weight and the desired weight that is positive associated
+	Additionally people in most cases desire to weight a little lower than their current weight
+
+# OYO 2 #
+
+Desc:
+	Let's consider a new variable: the difference between desired weight(wtdesire) and 
+		current weight(weight).
+	Create this new variable by substracting the two columns in the data frame and assigning
+		them to a new object called wdiff
+
+Answer:
+	>wdiff <- cdc$weight - cdc$wtdesire
+
+# OYO 3 #
+
+Desc: 
+	What type of data is wdiff?
+	If an observation wdiff is 0, what does this mean about the person's weight and desired weight?
+	What if wdiff is negative or positive?
+
+Answer:
+	>typeof(wdiff) -> "Integer"
+	
+	In reality wdiff is an vector of Integers
+
+	weight < wtdesire:
+		They want to gain more weight.
+
+	weight == wtdesire:
+		They don't want to change their weight.
+
+	weight > wtdesire:
+		They want to loose weight.
+
+# OYO 4 #
+
+Desc:
+	Describe the distribution of wdiff in terms of its center, shape and spread,
+		including any plots you use.
+	What does this tells us about how people feel about their current weight?
+
+Answer:
+	Graph looked at:
+		Boxplot
+		Scatterplot
+		Histogram
+
+	What appear is that people are really close to their own weight
+	The general pop wants to lose a little weight, but it is really close in general
+
+	The shape of the graphs are very limited to a small area where nearly all the results are the same
+	It look quite symmetric on the histogram
+
+# OYO 5 #
+
+Desc:
+	Using numerical summaries and a side by side box plot, determine if men tend to view their weight
+		differently than women.
+
+Answer:
+	>boxplot(wdiff ~ cdc$gender)
+
+	It appear that women in general want to lose weight more badly than males
+
+# OYO 6 #
+
+Desc:
+	Now it's time to get creative. Find the mean and standard deviation of weight and determine what
+		proportion of the weights are withing one standard deviation of the mean
+
+Answer:
+	Getting the mean
+	>mean(cdc$weight) -> 169.683
+
+	Getting the standard deviation
+	>s_all = (cdc$weight - mean(cdc$weight) ^ 2
+	>s2 <- sum(s_all) / length(cdc$weight)
+	>s <- sqrt(s2)
+
+	>s -> Standard deviation is 40.07997
+
+	Getting the proportion
+	>sum(abs(cdc$weight - mean(cdc$weight)) < s) / length(cdc$weight) -> 0.7076 -> 70.76 %
+
+# OYO 7 #
+
+Desc: 
+	What concepts from the textbook are covered in this lab?
+	What concepts, if any, are not covered in the textbook?
+	Have you seen these concepts elsewhere?
+
+Answer:
+	Guess this is your own little experiment :)
+
+	I Believe all the parts of the book attached this lab has been covered.
+	The most important i think, was how to use '~' in boxplots and 
+		the last assignment about the standard deviation.
+	I've of course seen boxplot, Scatterplot and histograms in Math and used them at work to show
+		performance in respect of responsetime to systems. 
+	
+	

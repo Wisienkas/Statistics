@@ -1,0 +1,124 @@
+####
+# Theoretical
+####
+
+# Exercise 2.2 #
+
+Desc: 
+	The game of roulette involves spinning a wheel with 38 slots: 18 red , 18 black and 2 green.
+	A ball is spun onto the wheel and will eventually land in a slot, where each slot has an equal
+		chance of capturing the ball
+
+Subparts:
+	
+	a) ----
+		desc:
+			You watch a roulette wheel spin 3 consecutive times and the ball lands on a red slot each
+			time. 
+			What is the probability that the ball will land on a red slot on the next spin?
+
+		Answer:
+			The Probability for the ball landing on the red slot is:
+			18 / 38 => 0.474
+
+	b) ----
+		desc: 
+			You watch a roulette wheel spin 300 consecutive times and the ball lands on a red slot
+			each time.
+			What is the probability that the ball will land on a red slot the next spin?
+		Answer:
+			The Probability for the ball landing on the red slot is:
+			18 / 38 => 0.474
+			Same as before. Not saying anything about dependency on previous
+
+	c) ----
+		desc:
+			Are you equally confident of your answers to parts (a) and (b)
+		Answer:
+			Yes
+
+# Exercise 2.6 #
+
+Desc:
+	If you roll a pair of fair dice, what is the probability of
+
+Subparts:
+	
+	a) ----
+		desc:
+			Getting a sum of 1?
+		Answer:
+			Since each dice will have 1 as the lowest value the sum would always be higher than 1
+			The answer is therefor that the sum of 1 is not a part of the probability-set 
+				meaning it's void or 0 
+	b) ----
+		Desc: 
+			Getting a sum of 5?
+		Answer:
+			there are 36 possible outcomes
+			to get 5 you have the following sets
+			{(1,4), (2,3), (3,2), (4,1)} 
+			you'll then have 4 out of 36 => 4 / 36
+
+	c) ----
+		Desc:
+			Getting a sum of 12?
+		Answer:
+			only 1 out of the 36 outcomes result in 2 * 6. meaning the probability is 1 in 36 => 1 / 36
+
+# Exercise 2.10 #
+
+Desc: 
+	Guessing on an exam.
+	In a multiple choice exam, there are 5 questions and 4 choices for each question (a,b,c,d).
+	Nancy as not studied for the exam at all and decides to randomly guess the answers.
+	What is the probability that:
+
+Subparts:
+
+	a) ----
+		Desc: 
+			The first question she gets right is the 5th question?
+		Answer:
+			Meaning the first 4 would be wrong. Assuming only 1 of the choices (a,b,c,d) is correct.
+			Futher assuming she took the questions in accending order: '1 then 2 then 3 ...'
+			the chance for failure is thereby 0.75 for each question, so for getting to 
+				the last question without anything right would be 0.75 ^ 4.
+			For then answering the last one correct would be 0.25:
+			
+			The final result is then:
+			P(first question right in 5th question) 
+			=> (0.75 ^ 4) * 0.25 
+			=> 0.079101563
+	
+	b) ----
+		Desc:
+			She gets all of the questions right?
+		Answer:
+			Assuming only 1 of (a,b,c,d) is correct foreach question.
+			
+			P(all correct) = 0.25 ^ 5
+
+	c) ----
+		Desc: 
+			She gets at least one question right?
+		Answer:
+			Assuming only 1 of (a,b,c,d) is correct foreach question.
+			
+			P( > 0 correct) = 1 - 0.75 ^ 5 = 0.762695313
+
+# Exercise 2.16 #
+
+Desc: 
+	PB & J. Suppose 80% of people like peanut butter, 89% like jelly, and 78% like both.
+
+	Given that a random sampled person likes panut butter, 
+		what's the probability that he also likes jelly?
+
+Answer:
+	P(j|pb) => P(j & pb) / P(pb) => 0.78 / 0.8 
+
+# Exercise 2.18 #
+
+	
+

@@ -1,0 +1,124 @@
+# Lab 0
+Name: Nikolaj Schaldemose Reibke <nirei12@student.sdu.dk>
+
+# Exercise 1 #
+
+Desc:
+	What command would you use to extract just the count of the girls baptized? 
+
+Answer:
+	> arbuthnot$girls (shows count for each year)
+	Or for total sum
+	> sum(arbuthnot$girls) (shows total for all years)
+
+# Exercise 2 #
+Desc:
+	Is there an apparent trend in the number of girls baptized over the years?
+
+Answer:
+	> The plot shows that the number of girls baptized has increased over the years
+	> it do however seems that in the 50's that a lot less was baptized.
+
+# Exercise 3 #
+
+Desc: 
+	Now, make a plot of the proportion of boys over time. What do you see? Tip: If you
+		use the up and down arrow keys, you can scroll through your previous commands, your so-called
+		command history. You can also access it by clicking on the history tab in the upper right panel.
+	This will save you a lot of typing in the future.
+
+Answer:
+	> It appear that in general there are more boys than girls baptized
+
+######
+# ON YOUR OWN
+######
+
+The data are stored in a data frame called present.
+	1. What years are included in this data set? What are the dimensions of the data frame 
+		and what are the variable or column names?
+	
+	> present$year
+	> dim(present)
+	> names(present)
+
+------------
+	2. How do these counts compare to Arbuthnot’s? Are they on a similar scale?
+	
+	> (present$boys > present$girls) => all true
+	> (arbuthnot$boys > arbuthnot$girls) => all true
+	The result tells that for both observations more boys than girls was baptized
+
+	The growth of boys and/or girls was not growing for the "present" dataset
+	It was however growing in the "arbuthnot" dataset.
+	
+	The scale between boys and girls was almost the same for arbuthnot and present.
+	arbuthnot(0.505 - 0.535)
+	present(0.5115 - 5135)
+
+------------
+	3. Does Arbuthnot’s observation about boys being born in greater proportion than girls 
+		hold up in the U.S.?
+	
+	> present$boys > present$girls => all true
+	That tells us that for atleast the "present" dataset observation it holds
+
+------------
+	4. Make a plot that displays the boy-to-girl ratio for every year in the data set. What do you see?
+	
+	> plot(present$year, present$boys/(present$boys + present$girls), type="l")
+	It shows that lesser and lesser boys are presented per girl, but it's only varying 0.2% over 60 years
+	
+
+------------
+	5. In what year did we see the most total number of births in the U.S.? You can refer 
+		to the help files or the R
+		reference card (http://cran.r-project.org/doc/contrib/Short-refcard.pdf ) 
+		to find helpful commands.
+
+	> present[which.max(present$boys + present$girls), "year"]
+
+#####
+#Homework Assignments
+#####
+
+Contains homework thingies from Open Stratistics
+
+# Exercise 1.1
+
+Description:
+	Of the 224 patients in the treatment group, 45 had a stroke by the end of the year.
+	Using these two numbers, compute the proportion of patients in the treatment group
+	who had a stroke by the end of their first year.
+	(Please note: answers to all in-text exercises are provided using footnotes.)²
+
+Answer:
+	> 45 / 244 > 0.2008929 %
+
+# Example 1.6(Page 8 for graph)
+
+Description:
+	This Example examines the relationship between homeownership and the percent of units 
+	in multi-unit structures (e.g. apartments, condos), which is visualized using a 
+	scatterplot in figure 1.9. 
+	
+	Are these variables associated
+
+Answer: They are negatively associate as it has the function form of f(x + 1) < f(x - 1)
+
+# Example 1.12
+
+Description:
+	Why would it be good for cases within each stratum to be very similar?
+
+Answer: 
+	Stability 
+
+# Exercise 1.21
+
+Description:
+	What was 'n' in this sample of emails?
+
+Answer:
+	The number of observations
+

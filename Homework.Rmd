@@ -1,0 +1,418 @@
+---
+title: "Homework"
+author: "Nikolaj Schaldemose Reibke"
+date: "11/21/2014"
+output: html_document
+---
+
+# Table of Content
+
+* [Introduction to Data 1](#ItD1)
+    + [1.1 - Migrane and acupuncture](#1.1)
+    + [1.6 - Smoking habits of UK residents](#1.6)
+    + [1.12 - Internet use and Life Expectations](#1.12)
+    + [1.21 - Exercise and Mental Health](#1.21)
+* [Introduction to Data 2](#ItD2)
+* [Probability 1](#P1)
+    + [2.12 - School Absences](#2.12)
+    + [2.22 - Predisposition](#2.22)
+* [Probability 2](#P2)
+    + [2.28 - Socks in a Drawer](#2.28)
+    + [2.40 - Baggage Fees](#2.40)
+
+# Homework
+
+## <a name="ItD1"></a>Introduction to Data 1 ## 
+
+__Assingments Overview__:
+
+- [1.1 - Migrane and acupuncture](#1.1)
+- [1.6 - Smoking habits of UK residents](#1.6)
+- [1.12 - Internet use and Life Expectations](#1.12)
+- [1.21 - Exercise and Mental Health](#1.21)
+
+### <a name="1.1"></a>1.1 Migrane and Acupuncture ###
+
+Group     | Yes   | No   |  Total
+----------|-------|------|---------
+Treatment | 10    | 33   | 43
+Control   | 2     | 44   | 46
+Total     | 12    | 77   | 89
+
+a. What percent of patients in the treatment group were pain free 24 hours after receiving acupuncture? What percent is in the control group?
+
+```{r}
+{
+treatment_pain_free <- 10 / 43
+print("The percentage of patients in the treatment group which was pain free after 24 hours is: ")
+print(treatment_pain_free) # Outputs: 0.2325581
+
+
+control_pain_free <- 2 / 44
+print("The percentage of patients in the control group which was pain free after 24 hours is: ")
+print(control_pain_free) # Outputs: 0.04545455
+}
+```
+
+b. At first glance, does acupuncture appear to be an effective treatment for migranes? Explain Your reasoning.
+
+It does seem to be somewhat effective. But still not "a cure" since it's still only a very small portion of people it actually works on.
+If it was used together with a lot of other options it might increase the overall total of people having migrane to be pain free
+
+c. Do the data provide convincing evidence that there is a real pain reduciton for those patients in the treatment group
+
+1 in 5 higher than those in the control group, seems somewhat convincing. There can't be said for certain that it wasn't just due to luck though. But there is a high chance that this for 1 in 4 was a real pain reduction.
+
+### <a name="1.6"><a/>1.6 - Smoking habits of UK residents ###
+
+Cigarette Habits    | gender  | age   | marital   | grossIncome   | smoke | amtWeekend  | amtWeekdays 
+--------------------|---------|-------|-----------|---------------|-------|-------------|------------
+1                   | Female  | 42    | Single    | Under £ 2600  | yes   | 12 cig/day  | 12 cig/day
+2                   | Male    | 44    | Single    | $ 10400 - 15600 | No  | N/A         | N/A
+3                   | Male    | 53    | Married   | Above £ 36400   | Yes | 6 cig/day   | 6 cig/day
+.                   | .       | .     | .         | .               | .   | .           | .
+.                   | .       | .     | .         | .               | .   | .           | .
+1691                | Male    | 40    | Single    | £ 2600 - 5200   | Yes | 8 cig/day   | 8 cig/day
+
+a. What does each row of the matrix represent?
+
+Each row of the matric represent an observation of a persons cigarette behaviour.
+The information from each person is as the following:
+
+- gender
+- age
+- marital
+- grossIncome
+- smoke
+- amtWeekend
+- amtWeekdays
+
+b. How many participants were included in the survey?
+
+Based on the table the survey had 1691 participants.
+
+c. Indicate whatever each variable in the survey is numerical or categorical. If numerical, identify as continous or discrete. If categorical, indicate if the variable is ordinal
+
+- gender:       Categorical -> Regular
+- age:          Numerical   -> Discrete
+- marital       Categorical -> Regular
+- grossIncome   Categorical -> Ordinal OR Numberical -> Discrete... This one is debateable depending on how you handle it
+- smoke         Categorical -> Regular
+- amtWeekend    Numerical   -> Discrete
+- amtWeekdays   Numerical   -> Discrete
+
+### <a name="1.12"><a/>1.12 - Internet use and life expectations
+
+A graph in book shows a graph with internet users (x - axis) and life expectations(y - axis) as a scatterplot illustrating life expections at birth as of 2012 and percentage of internet users in 2010 in 208 countries.
+
+a. Describe the relationship between life expectations and internet users.
+
+The relation ship is positively related.
+
+b. What type of study is this?
+
+Observational
+
+c. State a possible confounding variable that might explain this relationship and describe its potential effect.
+
+A varaible which increase the amount of internet users is the countries general wealth of people, since people with money have access to internet, these people also have higher life expectations because they are used to getting food each day and so on. 
+
+### <a name="1.21"><a/>1.21 - Exercise and mental health
+
+a. What kind of is this?
+
+Experimental
+
+b. What are the treatment and control group in this study?
+
+Depending what you hypothesis is:
+If you want to prove that more exercise do something then:
+The treatment group is the people being assigned to perform exercise
+The control groyp is the people being assigned to do nothing. 
+else it is the other way around.
+
+c. Do this study make use of blocking? If so, what is the blocking variable
+
+The age groups is the blocking variable.
+
+d. Does this study make use of blinding? 
+
+No, there is no placebo or otherwise confusions.
+
+e. Comment on whatever or not the result of the study can be used to create a casual relationship between exercise and mental health, and indicate whether or not the conclusions can be generalized to the population at large.
+
+No. The study only takes place for 2 weeks. The effect on the mental health might only be temporary and decrease futher afterward, therefore there has to be a much longer study on the subject to conclude anything of use. 
+
+f. Suppose you are given the task of determining if this proposed study should get funding. Would you have any reservations about the study proposal.
+
+I would say that it should not be funded as it doesn't give anything.
+
+## <a name="ItD2"><a/>Introduction to Data 2
+
+## <a name="P1"><a/>Probability 1
+
+__Assignment Overview__:
+
+- [2.12 - School Absences](#2.12)
+- [2.22 - Predisposition](#2.22)
+
+### <a name="2.12"><a/>2.12 - School absences
+
+Data collected at elementary schools in DeKalb county, GA suggest that each year roughly 25% of the students miss exactly one day of school, 15 % miss 2 days, and 28 % miss 3 or more days due to sickness.
+
+a. What is the probability that a student choosen at random doesn't miss any days of school due to sickness this year
+
+```{r}
+{
+  miss_1 = 0.25
+  miss_2 = 0.15
+  miss_3_plus = 0.28
+
+  miss_0 = 1 - (miss_1 + miss_2 + miss_3_plus)
+
+  cat("Percentage of students not missing any days: ")
+  print(miss_0)
+}
+```
+
+b. What is the probability that a student chosen at random misses no more than one day?
+
+```{r}
+{
+  miss_1 = 0.25
+  miss_2 = 0.15
+  miss_3_plus = 0.28
+  miss_0 = 1 - (miss_1 + miss_2 + miss_3_plus)
+
+  cat("Percentage of students missing maximum of one day: ")
+  print(miss_0 + miss_1)
+}
+```
+
+c. What is the probability that a student chosen at random misses atleast one day ?
+
+```{r}
+{
+  miss_1 = 0.25
+  miss_2 = 0.15
+  miss_3_plus = 0.28
+  miss_0 = 1 - (miss_1 + miss_2 + miss_3_plus)
+
+  cat("Percentage of students missing atleast one day: ")
+  print(1 - miss_0)
+}
+```
+
+d. If a parent has two kids at a DeKalb County elementary school, what is the probability that neither kids will miss any school?
+
+Assuming they are average kids
+```{r}
+{
+  miss_1 = 0.25
+  miss_2 = 0.15
+  miss_3_plus = 0.28
+  miss_0 = 1 - (miss_1 + miss_2 + miss_3_plus)
+
+  cat("Percentage that neither kids will miss any school: ")
+  print(miss_0 * miss_0)
+}
+```
+
+e. If a parent has two kids at a DeKalb County elementary school, what is the probability that both kids will miss some school, i.e. at least one day?
+
+Assuming they are average kids
+```{r}
+{
+  miss_1 = 0.25
+  miss_2 = 0.15
+  miss_3_plus = 0.28
+  miss_0 = 1 - (miss_1 + miss_2 + miss_3_plus)
+
+  cat("Percentage that neither kids will miss any school: ")
+  print((1 - miss_0) ^ 2)
+}
+```
+
+f. If you made an assumption in part (d) or (e), do you think it was reasonable?
+
+Yes 
+
+### <a name="1.6"><a/>2.22 - Predisposition for thrombosis
+
+A genetic test is used to determine if people have a predisposition for thrombosis which is the formation of blood clot inside a blood vessel that obstruct the flow of blood through the circulatory system. It is believed that 3% of people
+actually have this predisposition. The genetic test is 99% accurate if a person actually has the
+predisposition, meaning that the probability of a positive test result when a person actually has
+the predisposition is 0.99. The test is 98% accurate if a person does not have the predisposition.
+
+What is the probability that a randomly selected person who tests positive for the predisposition
+by the test actually has the predisposition?
+
+```{r}
+{
+  infec_positive_acc <- 0.99
+  infec_negative_acc <- 0.98
+  infec <- 0.03
+
+  not <- 0.97
+  not_positive_acc <- 0.98
+  not_negative_acc <- 0.02
+  
+  # Chance to get a positive result
+  test_positive <- (infec * infec_positive_acc) + (not * not_negative_acc)
+  
+  # Chance that the positive result was actually not a false positive
+  prob_infected <- (infec * infec_positive_acc) / test_positive
+  
+  cat("Chance for person to test positive and actually have it: ")
+  print(prob_infected)
+}
+```
+
+## <a name="P2"><a/>Probability 2
+
+__Assignment Overview__:
+
+- [2.28 - Sock in a Drawer](#2.28)
+- [2.40 - Baggage Fees](#2.40)
+- [2.46 - Income and Gender](#2.46)
+
+### <a name="2.28"><a/>2.28 - Socks in a Drawer
+
+In your sock drawer you have 4 blue, 5 gray and 3 black socks. Half asleep one morning you grab 2 socks at random and put them on.
+Find the probability you end up wearing
+
+__Rules for probability__:
+
+- P(a AND b) = P(a) * P(b)
+
+- P(a OR b) = P(a) + P(b) - P(a AND b)
+
+#### a. 2 blue socks
+
+P(1st Blue AND 2nd Blue)
+
+```{r}
+{
+  blue <- 4
+  gray <- 5
+  black <- 3
+  
+  count <- blue + gray + black
+  
+  prob_first_blue <- blue / count
+  prob_second_blue <-  (blue - 1) / (count - 1)
+  
+  cat("Probability for 2 blue socks: ")
+  print(prob_first_blue * prob_second_blue)
+}
+```
+
+#### b. No gray socks
+
+P(1st not gray AND 2nd not gray)
+
+```{r}
+{
+  blue <- 4
+  gray <- 5
+  black <- 3
+  count <- blue + gray + black
+  
+  prob_first_not_gray <- (blue + black) / count
+  prob_second_not_gray <-  (blue + black - 1) / (count - 1)
+  
+  cat("Probability for no gray socks: ")
+  print(prob_first_not_gray * prob_second_not_gray)
+}
+```
+
+#### c. At least 1 black sock
+
+P(1st Black **OR** 2nd Black)
+
+but can be reduced further to (using De Morgan's law)
+
+1 - P(1st NOT Black **AND** 2nd NOT Black)
+
+```{r}
+{
+  blue <- 4
+  gray <- 5
+  black <- 3
+  
+  count <- blue + gray + black
+  
+  prob_not_black <- ((blue + gray) / count) * ((blue + gray - 1) / (count - 1))
+  
+  cat("Probability for at least 1 black sock: ")
+  print(1 - prob_not_black)
+}
+```
+
+#### d. A green sock
+
+Since there is no green socks, the probability is Zero
+
+#### e. Matching socks
+
+P(Matching Blue **OR** Matching Gray **OR** Matching Black)
+
+reduced to (using De Morgan's law)
+
+1 - P(NOT Matching Blue **AND** NOT Matching Gray **AND** NOT Matching Black)
+
+```{r}
+{
+  blue <- 4
+  gray <- 5
+  black <- 3
+  
+  count <- blue + gray + black
+  
+  prob_matching <- function(x, size){
+    return (x / size) * ((x - 1) / (size - 1))
+  }
+  
+  prob_not_blue <- 1 - prob_matching(blue, count)
+  prob_not_gray <- 1 - prob_matching(gray, count)
+  prob_not_black <- 1 - prob_matching(black, count)
+  
+  cat("Probability for a matching pair: ")
+  print(1 - (prob_not_blue * prob_not_gray * prob_not_black))
+}
+```
+
+### <a name="2.40"><a/>2.40 - Baggage fees ###
+
+An airline charges the following baggage fees: $25 for the first bag and
+$35 for the second. Suppose 54% of passengers have no checked luggage, 34% have one piece of
+checked luggage and 12% have two pieces. We suppose a negligible portion of people check more
+than two bags.
+
+#### a. Build a probability model, compute the average revenue per passenger, and compute the
+corresponding standard deviation.
+
+```{r}
+{
+  
+}
+```
+
+#### b. About how much revenue should the airline expect for a flight of 120 passengers? With what
+standard deviation? Note any assumptions you make and if you think they are justified.
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+summary(cars)
+```
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
