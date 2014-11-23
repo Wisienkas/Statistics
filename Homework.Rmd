@@ -164,11 +164,11 @@ a. What is the probability that a student choosen at random doesn't miss any day
 
 ```{r}
 {
-  miss_1 = 0.25
-  miss_2 = 0.15
-  miss_3_plus = 0.28
+  miss_1 <- 0.25
+  miss_2 <- 0.15
+  miss_3_plus <- 0.28
 
-  miss_0 = 1 - (miss_1 + miss_2 + miss_3_plus)
+  miss_0 <- 1 - (miss_1 + miss_2 + miss_3_plus)
 
   cat("Percentage of students not missing any days: ")
   print(miss_0)
@@ -179,10 +179,10 @@ b. What is the probability that a student chosen at random misses no more than o
 
 ```{r}
 {
-  miss_1 = 0.25
-  miss_2 = 0.15
-  miss_3_plus = 0.28
-  miss_0 = 1 - (miss_1 + miss_2 + miss_3_plus)
+  miss_1 <- 0.25
+  miss_2 <- 0.15
+  miss_3_plus <- 0.28
+  miss_0 <- 1 - (miss_1 + miss_2 + miss_3_plus)
 
   cat("Percentage of students missing maximum of one day: ")
   print(miss_0 + miss_1)
@@ -193,10 +193,10 @@ c. What is the probability that a student chosen at random misses atleast one da
 
 ```{r}
 {
-  miss_1 = 0.25
-  miss_2 = 0.15
-  miss_3_plus = 0.28
-  miss_0 = 1 - (miss_1 + miss_2 + miss_3_plus)
+  miss_1 <- 0.25
+  miss_2 <- 0.15
+  miss_3_plus <- 0.28
+  miss_0 <- 1 - (miss_1 + miss_2 + miss_3_plus)
 
   cat("Percentage of students missing atleast one day: ")
   print(1 - miss_0)
@@ -208,10 +208,10 @@ d. If a parent has two kids at a DeKalb County elementary school, what is the pr
 Assuming they are average kids
 ```{r}
 {
-  miss_1 = 0.25
-  miss_2 = 0.15
-  miss_3_plus = 0.28
-  miss_0 = 1 - (miss_1 + miss_2 + miss_3_plus)
+  miss_1 <- 0.25
+  miss_2 <- 0.15
+  miss_3_plus <- 0.28
+  miss_0 <- 1 - (miss_1 + miss_2 + miss_3_plus)
 
   cat("Percentage that neither kids will miss any school: ")
   print(miss_0 * miss_0)
@@ -223,10 +223,10 @@ e. If a parent has two kids at a DeKalb County elementary school, what is the pr
 Assuming they are average kids
 ```{r}
 {
-  miss_1 = 0.25
-  miss_2 = 0.15
-  miss_3_plus = 0.28
-  miss_0 = 1 - (miss_1 + miss_2 + miss_3_plus)
+  miss_1 <- 0.25
+  miss_2 <- 0.15
+  miss_3_plus <- 0.28
+  miss_0 <- 1 - (miss_1 + miss_2 + miss_3_plus)
 
   cat("Percentage that neither kids will miss any school: ")
   print((1 - miss_0) ^ 2)
@@ -345,7 +345,7 @@ but can be reduced further to (using De Morgan's law)
   prob_not_black <- ((blue + gray) / count) * ((blue + gray - 1) / (count - 1))
   
   cat("Probability for at least 1 black sock: ")
-  print(1 - prob_not_black)
+  print(prob_not_black)
 }
 ```
 
@@ -378,7 +378,7 @@ reduced to (using De Morgan's law)
   prob_not_black <- 1 - prob_matching(black, count)
   
   cat("Probability for a matching pair: ")
-  print(1 - (prob_not_blue * prob_not_gray * prob_not_black))
+  print((prob_not_blue * prob_not_gray * prob_not_black))
 }
 ```
 
@@ -392,7 +392,7 @@ than two bags.
 #### a. Build a probability model, compute the average revenue per passenger, and compute the
 corresponding standard deviation.
 
-```{r}
+```{r fig.width=4 }
 {
   
 }
