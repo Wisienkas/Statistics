@@ -694,6 +694,67 @@ __assignment_overview__:
 
 ### <a name="3.10"></a>3.10 - Heights of 10 year olds ###
 
+Heights of 10 year olds, regardless of gender, closely follow a normal
+distribution with mean 55 inches and standard deviation 6 inches.
+
+#### a. What is the probability that a randomly chosen 10 year old is shorter than 48 inches 
+
+````{r}
+{
+  mean <- 55
+  sd <- 6
+  
+  inches <- 48
+  
+  cat("The probability for 10 year old shorther than 48 inches: ")
+  print(pnorm(q = 48, mean = mean, sd = sd, lower.tail = TRUE))
+}
+```
+
+#### b. What is the probability that a randomly chosen 10 year old is between 60 and 65 inches? 
+
+````{r}
+{
+  mean <- 55
+  standard_deviation <- 6
+  
+  lower <- pnorm(q = 60, mean = mean, sd = standard_deviation)
+  upper <- pnorm(q = 65, mean = mean, sd = standard_deviation)
+  
+  cat("The probability for 10 year old between 60 and 65 inches: ")
+  print(upper - lower)
+}
+```
+
+#### c. If the tallest 10% of the class is considered "very tall", what is the height cutoff for "very tall"?
+
+````{r}
+{
+  mean <- 55
+  standard_deviation <- 6
+  
+  cutoff <- qnorm(p = 0.9, mean = mean, sd = standard_deviation)
+  
+  cat("The cutoff for \"Very Tall\" is: ")
+  cat(cutoff)
+  print(" Inches!")
+}
+```
+
+#### d. The height requirement for <i>Batman the Ride</i> at Six Flags Magic Mountain is 54. What percent of 10 year olds cannot go on this ride? 
+
+````{r}
+{
+  mean <- 55
+  standard_deviation <- 6
+  
+  cutoff <- pnorm(q = 54, mean = mean, sd = standard_deviation)
+  
+  cat("The cutoff percentage for \"Batman the Ride\" is: ")
+  cat(cutoff)
+  print("%.")
+}
+```
 
 ### <a name="3.12"></a>3.12 - Speeding on the I-5, Part 1 ###
 
