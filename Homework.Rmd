@@ -824,6 +824,13 @@ the Interstate 5 Freeway (I-5) in California is nearly normal with a mean of 72.
 
 ### <a name="3.20"></a>3.20 - Heights of female college students, Part 2 ###
 
+#### Exercise 3.18 lists the heights of 25 female college students. Do these data appear to follow a normal distribution? Explain your reasoning using the graphs provided below.
+
+<i>Figures found in the book on page: 152</i>
+
+Yes it seems to follow the normal distribution. With more samples 
+however it would be even more likely to follow the normal 
+distribution.
 
 ### <a name="3.26"></a>3.26 - Speeding on the I-5, Part 2 ###
 
