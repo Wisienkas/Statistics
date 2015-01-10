@@ -834,6 +834,47 @@ distribution.
 
 ### <a name="3.26"></a>3.26 - Speeding on the I-5, Part 2 ###
 
+Exercise 3.12 states that the distribution of speeds of cars traveling on the Interstate 5 Freeway (I-5) in California is nearly normal with a mean of 72.6 miles/hour and a standard deviation of 4.78 miles/hour. The speed limit on this stretch of the I-5 is 70 miles/hour.
+
+#### a. A highway patrol officer is hidden on the side of the freeway. What is the probability that 5 cars pass and none are speeding? Assume that the speeds of the cars are independent of each other.
+
+````{r}
+{
+  mph_mean <- 72.6
+  mph_sd <- 4.78
+  
+  prob_not_speeding <- pnorm(q = 70, mean = mph_mean, sd = mph_sd)
+  
+  chance_5_not_speeding <- prob_not_speeding ^ 5
+  
+  cat("The chance that 5 car passes without speeding is: ")
+  print(chance_5_not_speeding)
+}
+```
+
+#### b. On average, how many cars would the highway patrol officer expect to watch until the first car that is speeding? What is the standard deviation of the number of cars he would expect to watch?
+
+````{r}
+{
+  mph_mean <- 72.6
+  mph_sd <- 4.78
+  
+  prob_speeding <- pnorm(q = 70, mean = mph_mean, sd = mph_sd, lower.tail = F)
+  
+  # Mean described as 1 / p, where p is probability
+  speeding_mean <- 1 / prob_speeding
+  
+  cat("The average amount of cars before a speeding car: ")
+  print(speeding_mean)
+  
+  # Standard Deviation described as sd = sqrt((1 - p) / (p ^ 2))
+  speeding_sd = sqrt((1 - prob_speeding) / (prob_speeding ^ 2))
+  
+  cat("The Standard Deviation of the number of cars he would expect to watch: ")
+  print(speeding_sd)
+}
+```
+
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
