@@ -13,6 +13,11 @@ output: html_document
     + [1.12 - Internet use and Life Expectations](#1.12)
     + [1.21 - Exercise and Mental Health](#1.21)
 * [Introduction to Data 2](#ItD2)
+    + [1.27 - Make up Exam](#1.27)
+    + [1.40 - Marathon Winners](#1.40)
+    + [1.41 - Robust Statistic](#1.41)
+    + [1.50 - Heart transplant, Part 1](#1.50)
+    + [1.54 - Sinusitis and antibiotics, Part 2](#1.54)
 * [Probability 1](#P1)
     + [2.12 - School Absences](#2.12)
     + [2.22 - Predisposition](#2.22)
@@ -148,6 +153,102 @@ f. Suppose you are given the task of determining if this proposed study should g
 I would say that it should not be funded as it doesn't give anything.
 
 ## <a name="ItD2"><a/>Introduction to Data 2
+
+__Assignment Overview__:
+- [1.27 - Make up Exam](#1.27)
+- [1.40 - Marathon Winners](#1.40)
+- [1.41 - Robust Statistic](#1.41)
+- [1.50 - Heart transplant, Part 1](#1.50)
+- [1.54 - Sinusitis and antibiotics, Part 2](#1.54)
+
+### <a name="1.27"><a/>1.27 - Make up Exam
+
+In a class of 25 students, 24 of them took an exam in class and 1 student
+took a make-up exam the following day. The professor graded the first batch of 24 exams and
+found an average score of 74 points with a standard deviation of 8.9 points. The student who took
+the make-up the following day scored 64 points on the exam
+
+a. Does the new student's score increase or decrease the average score?
+
+Since the student on the following day scored lower than the average, 
+he/she lowered the average of the 25 students.
+
+b. What is the new average?
+
+````{r}
+{
+  average <- 74
+  students <- 25
+  
+  # The student of the following days 
+  # part in  the total new average
+  new_student_part <- (64 / (students))
+  # The average with 25 students without the 
+  # 25th students part
+  new_average_part <- ((74 / students) * (students - 1))
+  
+  # The new average after the last students points 
+  # has been added
+  new_average <- new_student_part + new_average_part
+  
+  cat("The new average is: ")
+  print(new_average)
+}
+```
+
+c. Does the new student's score increase or decrease the standard deviation of the scores?
+
+````{r}
+{
+  # Source for isolation: 
+  # http://mathforum.org/library/drmath/view/52820.html
+  
+  # Average from previous question
+  average = new_average
+  standard_deviation = 8.9
+  # Now just the 24 students
+  students = 24
+  # Last student grade
+  last_student = 64
+  
+  sum <- average * students
+  # students(standard_deviation^2 + average^2) = Sum[x^2]
+  sum2 <- students * ((standard_deviation ^ 2) + (average ^ 2))
+  
+  # Formula for adding to standard deviation
+  #
+  #               (n+1)*(v^2 + Sum[x^2]) - (v + Sum[x])^2
+  #  s' = Sqrt[ --------------------------------------- ]
+  #                      (n+1)^2
+  #
+  
+  # (n+1)*(v^2 + Sum[x^2])
+  upper_part1 <- ((students + 1) * ((64 ^ 2) + (sum2)))
+  # (v + Sum[x])^2
+  upper_part2 <- (last_student + sum) ^ 2
+  # (n+1)*(v^2 + Sum[x^2]) - (v + Sum[x])^2
+  upper <- upper_part1 - upper_part2
+  # (n+1)^2
+  lower <- (students + 1) ^ 2
+  # The whole formula
+  sd_mark = sqrt(upper / lower)
+  
+  cat("The new standard deviation is: ")
+  print(sd_mark)
+  cat("The old was: ")
+  print(standard_deviation)
+  cat("The last student did: ")
+  if(sd_mark > standard_deviation) cat("Increase") else cat("Decrease")
+  print(" the standard deviation")
+}
+```
+
+### <a name="1.40"><a/>1.40 - Marathon Winners
+
+ The histogram and box plots below show the distribution of finishing
+times for male and female winners of the New York Marathon between 1970 and 1999.
+
+
 
 ## <a name="P1"><a/>Probability 1
 
