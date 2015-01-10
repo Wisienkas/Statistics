@@ -758,6 +758,69 @@ distribution with mean 55 inches and standard deviation 6 inches.
 
 ### <a name="3.12"></a>3.12 - Speeding on the I-5, Part 1 ###
 
+The distribution of passenger vehicle speeds traveling on
+the Interstate 5 Freeway (I-5) in California is nearly normal with a mean of 72.6 miles/hour and a standard deviation of 4.78 miles/hour.
+
+#### a. What percent of passenger vehicles travel slower than 80 miles/hour?
+
+````{r}
+{
+  mph_mean <- 72.6
+  mph_sd <- 4.78
+  
+  under_80 <- pnorm(q = 80, mean = mph_mean, sd = mph_sd)
+  
+  cat("Percent of passenger vehicles under 80 mph: ")
+  cat(under_80)
+  print(".")
+}
+```
+
+#### b. What percent of passenger vehicles travel between 60 and 80 miles/hour?
+
+````{r}
+{
+  mph_mean <- 72.6
+  mph_sd <- 4.78
+  
+  under_80 <- pnorm(q = 80, mean = mph_mean, sd = mph_sd)
+  under_60 <- pnorm(q = 60, mean = mph_mean, sd = mph_sd)
+  
+  cat("Percent of passenger vehicles under 80 mph: ")
+  cat(under_80 - under_60)
+  print(".")
+}
+```
+
+#### c. How fast do the fastest 5% of passenger vehicles travel?
+
+````{r}
+{
+  mph_mean <- 72.6
+  mph_sd <- 4.78
+  
+  top5 <- qnorm(p = 0.95, mean = mph_mean, sd = mph_sd)
+  
+  cat("Speed of fastest 5% of passenger vehicles: ")
+  cat(top5)
+  print(" mph and above.")
+}
+```
+
+#### d. The speed limit on this stretch of the I-5 is 70 miles/hour. Approximate what percentage of the passenger vehicles travel above the speed limit on this stretch of the I-5?
+
+````{r}
+{
+  mph_mean <- 72.6
+  mph_sd <- 4.78
+  
+  above70 <- pnorm(q = 70, mean = mph_mean, sd = mph_sd, lower.tail = F)
+  
+  cat("Part of passengers drivin over 70 mph: ")
+  cat(above70)
+  print(".")
+}
+```
 
 ### <a name="3.20"></a>3.20 - Heights of female college students, Part 2 ###
 
