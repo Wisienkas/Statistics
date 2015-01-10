@@ -945,10 +945,53 @@ While it is often assumed that the probabilities of having a boy or a girl are t
 
 #### a. Use the binomial model to calculate the probability that two of them will be boys.
 
+````{r}
+{
+  male_prob <- 0.51
+  chance <- dbinom(x = 2, size = 3, prob = male_prob)
+  
+  cat("The probability that out of 3 children 2 will be boys: ")
+  print(chance)
+}
+```
+
 #### b. Write out all possible orderings of 3 children, 2 of whom are boys. Use these scenarios to calculate the same probability from part (a) but using the Addition Rule for disjoint events. Confirm that your answers from parts (a) and (b) match.
+
+Where 1 = boy and 0 = girl
+
+<b>Write outs:</b>
+{
+  {1, 1, 0},
+  {1, 0, 1},
+  {0, 1, 1},
+}
+
+````{r}
+{
+  male_prob <- 0.51
+  
+  # P(1, 1, 0)
+  p1 <- 0.51 * 0.51 * 0.49
+  # P(1, 0, 1)
+  p2 <- 0.51 * 0.49 * 0.51
+  # P(0, 1, 1)
+  p3 <- 0.49 * 0.51 * 0.51
+  
+  # P1 OR P2 OR P3
+  total <- p1 + p2 + p3
+  
+  # Can also just be done like this
+  total <- ((0.51 ^ 2) * 0.49) * 3
+  
+  cat("The probability that out of 3 children 2 will be boys: ")
+  print(total)
+}
+```
 
 #### c. If we wanted to calculate the probability that a couple who plans to have 8 kids will have 3 boys, briefly describe why the approach from part (b) would be more tedious than the approach from part (a).
 
+Because it evolved polynominally and therefore quickly escalate in 
+the amount of possible scenarius. 
 
 ==================================
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
