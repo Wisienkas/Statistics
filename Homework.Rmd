@@ -32,6 +32,10 @@ output: html_document
 * [Distributions of random variables 2](#DoRV2)
     + [3.28 - Chickenpox, Part 1](#3.28)
     + [3.40 - Male Children](#3.40)
+* [Foundations for inference 1](#FfI1)
+    + [4.4 - Heights of adults](#4.4)
+    + [4.12 - Thanksgiving spending, Part 1](#4.12)
+    + [4.32 - Speed reading, Part 1](#4.32)
 
 # Homework
 
@@ -992,6 +996,104 @@ Where 1 = boy and 0 = girl
 
 Because it evolved polynominally and therefore quickly escalate in 
 the amount of possible scenarius. 
+
+## <a name="FfI1"></a>Foundations for inference 1 ## 
+
+__Assignment_Overview__:
+
+- [4.4 - Heights of adults](#4.4)
+- [4.12 - Thanksgiving spending, Part 1](#4.12)
+- [4.32 - Speed reading, Part 1](#4.32)
+
+### <a name="4.4"></a>4.4 - Heights of adults ###
+
+Researchers studying anthropometry collected body girth measurements and skeletal diameter measurements, as well as age, weight, height and gender, for 507 physically active individuals. The histogram below shows the sample distribution of heights in centimeters.
+
+<i>Figure in book on page: 198.</i>
+
+Correspond table to figure:
+
+Key    | Value
+-------|------
+Min    | 147.2
+Q1     | 163.8
+Median | 170.3
+Mean   | 171.1
+SD     |   9.4
+Q3     | 177.8
+Max    | 198.1
+
+#### a. What is the point estimate for the average height of active individuals? What about the median?
+
+The point estimate of the average is: 171.1
+
+The point estimate for the median is: 170.3
+
+
+#### b. What is the point estimate for the standard deviation of the heights of active individuals? What about the IQR? 
+
+The point estimate for the standard deviation is: 9.4
+
+for IQR:
+- Q1: 163.8
+- Q3: 177.8
+
+#### c.  Is a person who is 1m 80cm (180 cm) tall considered unusually tall? And is a person who is 1m 55cm (155cm) considered unusually short? Explain your reasoning.
+
+````{r}
+{
+  mean <- 171.1
+  sd <- 9.4
+
+  cat("probability for 180 cm and over: ")
+  # Outputs 0.1718682
+  print(pnorm(q = 180, mean = mean, sd = sd, lower.tail = FALSE))
+}
+```
+
+That is not considered "Unusually", If it was less than 5% it would be unusual
+
+````{r}
+{
+  mean <- 171.1
+  sd <- 9.4
+
+  cat("probability for 155 cm and under: ")
+  # Outputs 0.0433778
+  print(pnorm(q = 155, mean = mean, sd = sd, lower.tail = TRUE))
+}
+```
+
+The short person would however be considered unusually short as under
+5% of the sample would result in such a short person.
+
+#### d. The researchers take another random sample of physically active individuals. Would you expect the mean and the standard deviation of this new sample to be the ones given above? Explain your reasoning
+
+It wouldn't be exactly the same, but it would look nearly the same.
+
+#### e. The sample means obtained are point estimates for the mean height of all active individuals, if the sample of individuals is equivalent to a simple random sample. What measure do we use to quantify the variability of such an estimate? Compute this quantity using the data from the original sample under the condition that the data are a simple random sample.
+
+To make a random sampling, the use of mean nd standard deviation can 
+be used
+
+````{r}
+{
+  size <- 1000;
+  mean <- 171.1
+  sd <- 9.4
+  
+  sample <- rnorm(n = size, mean = mean, sd = sd)
+  
+  summary(sample)
+}
+```
+
+### <a name="4.12"></a>4.12 - Thanksgiving spending, Part 1 ###
+
+
+
+### <a name="4.32"></a>4.32 - Speed reading, Part 1 ###
+
 
 ==================================
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
