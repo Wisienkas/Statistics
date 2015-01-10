@@ -248,6 +248,62 @@ c. Does the new student's score increase or decrease the standard deviation of t
  The histogram and box plots below show the distribution of finishing
 times for male and female winners of the New York Marathon between 1970 and 1999.
 
+<i>Figure in book page: 59</i>
+</br>
+</br>
+<b>
+a. What feature of the distribution are apparent in the histogram
+  and not the box plot?
+  What features are apparent in the box plot not in the histogram?
+</b>
+</br>
+The histogram shows that there are 2 big groups of entries.
+This is called a bimodal histogram. 
+
+The Box plot shows the outliers and that there 
+are no "lower" outliers.
+</br>
+</br>
+<b>
+b. What may be the reason for the bimodal distriution? Explain.
+</b>
+</br>
+The reason that the histogram is bimodal might be because the entries
+include both male and females.
+
+Females do in general have less muscular mass and therefore they 
+generally take longer to run a marathon.
+
+So the two spikes are due to the most likely time for male and female.
+</br>
+</br>
+<b>
+c. Compare the distribution of marathon times for men and women 
+  based on the box plot shown below. 
+</b>
+</br>
+</br>
+<i>Figure in book page: 59</i>
+
+It is easy to see from the two box plots that women in general have
+a higher time than males.
+
+Also the females tend to be more spread than the males.
+</br>
+</br>
+<b>
+d. The time series plot shown below is another way to look at these data.
+  Describe what is visible in this plot but not in the others.
+</b>
+</br>
+</br>
+<i>Figure in book page: 59</i>
+
+This last graph shows the average of male and females for each year
+instead of the sum of all the years as seen on the other models. 
+
+This gives an idea about how the times for male and female changes each year. 
+
 
 
 ## <a name="P1"><a/>Probability 1
