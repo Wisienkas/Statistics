@@ -304,7 +304,35 @@ instead of the sum of all the years as seen on the other models.
 
 This gives an idea about how the times for male and female changes each year. 
 
+### <a name="1.41"><a/>1.41 - Robust statistics
 
+The first histogram below shows the distribution of the yearly incomes
+of 40 patrons at a college coffee shop. Suppose two new people 
+walk into the coffee shop: one
+making $225,000 and the other $250,000. The second histogram shows 
+the new income distribution. Summary statistics are also provided.
+
+<i>The figure is that should be here are found in the book page: 60</i>
+
+a. Would the mean or the median best represent what we might think of as a typical income
+for the 42 patrons at this coffee shop? What does this say about the robustness of the two measures?
+
+The best way to still show the typical income of the now 42 patrons,
+would be to take the median, as it would only have moved to the next 
+entry of income for all the incomes as an ordered list, it would now 
+pick the entry number 21 instead of entry 20. 
+
+If the average was taken, it could if the 2 new had earned even more,
+be moved beyond what the 3rd highest income patron was being paid. 
+Which in this case would be a bad example to show. 
+
+b.  Would the standard deviation or the IQR best represent the 
+amount of variability in the incomes of the 42 patrons at this coffee 
+shop? What does this say about the robustness of the two measures?
+
+The IQR would just as the median be affected the least of the two
+measurements. 
+Therefore the IQR is more robust against far outliers.
 
 ## <a name="P1"><a/>Probability 1
 
