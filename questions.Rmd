@@ -1,0 +1,230 @@
+1. Explain	the	difference	between	an	experiment	and	an	observational	
+study.
+
+An Experiment gives treatments to the subjects 
+An Experiment also has an control group, for comparison
+
+An observation only observe variables on subjects
+
+2. What	types	of	variables	are	there?	Explain	them.
+
+Types of variables:
+
+	* Numerical
+		+ Continous( Can be any number ) 
+		+ Discrete( Only Integers )
+	* Categorical
+		+ Ordinal( If you can rank the different variables and they are categorical)
+		+ Regular (Gender, smoker etc)
+
+3. What	is	random	sampling?
+
+If a group of people has answered a few question and only a few of they answers are picked at random
+that is random sampling.
+
+4. What	is	random	assignment?
+
+Random assignment is used in experimental studies, and is the practice of putting
+participants in treatment or control group at random.
+
+5. When	do	you	use	them	(experiments/observational	study)?
+
+If I want to see if something new is working, you generally want to do
+an experiment to test if the new invention or whatever work and how good, compared to
+the current methods or nothing.
+
+Observations are just observations of lets say the height of people and if they are smoking.
+The study could then try to see if smoke and height is connected.
+
+6. What	are	explanatory	and	response	variables?
+
+	* explanatory: Other word for *Independent* variable
+	  + Independent: Variable at input
+	* reponse: Other word for *Dependant* variable
+	  + Dependant: Variable at output, and is expected change if Independent change
+
+7. Compare	mean	and	median,	in	which	cases	you	would	prefer	to	use	the	one	to the	other?
+
+	* Mean: all the values summed and divided by the amount of values, Also known as *Average*
+	  + Usage: If the values are clustered and doesn't have any far outliers
+	* Median: The middle value of an ascending ordered list/set, take index 1 - 100, the median would be 50
+	  + Usage: If there are extreme outliers
+
+8. What	is	modality	and	skewness? Show	by	example.
+
+	* Modality
+	  + Unimodal: One Mountain
+	  + Bimodal: two Mountains
+	* Skewness: 
+	  + Left skewed: All the values occour to the right
+	  + Right skewed: All the values occour to the left
+
+*Skewness*: 
+	An example of skewness would be Income level of people in a country.
+	Most of the people would have medium to low income, while a small part
+	would earn an extreme amount of money.
+
+*Modality*
+	Height of people would follow the normal distribution and be uni-modal
+
+9. What	is	standard	deviation	and	variance	and	how	do	they	relate?
+
+	* Standard Deviation: Measures the variation from the mean
+	  + High: Means the values are very spread
+	  + Low: Means the values are very concentrated
+	* Variance: Measures how far values are spread in the sample 
+	   
+*SD vs Variance*: 
+	+ sqrt(variance) = Standard Deviation 
+	+ Standard Deviation ^ 2 = Variance
+
+10. Explain	the	law	of	large	numbers.
+
+If the same study is continously conducted the result are increasingly more likely to 
+be the expected result. 
+
+11. What	is	a	sample	space?	Provide	example.
+
+A complete set of all outcomes.
+
+For 2 coint tosses the possible outcome would be:
+{
+	{Head, Head},
+	{Head, Tail},
+	{Tail, Head},
+	{Tail, Tail}
+}
+
+12. When	are	two	processes	independent?
+
+When they have nothing to do with each other
+
+13. Explain	the	concept	of	conditional	probability	and	show	how	you	calculate	it.
+
+P(6 on first dice AND 5 on second dice) = P(6 on first dice) * P(5 on second dice)
+
+P(E1 OR E2) = P(E1) + P(E2)
+
+P(E1 AND E2) = P(E1) * P(E2)
+
+14. What	is	important	when	sampling	from	a	small	population?
+
+Atleast:
+	+ 10 success
+	+ 10 failures
+	+ n >= 30
+
+15. What	is	a	random	variable (RV)?	What	is	an	expected	value	of	a	RV?
+
+A random value is a random value is random value.
+
+It is generated due to chance on a set of different values.
+
+The expected value is the highest probability
+
+16. What is	the	probability	for	an exact value of a	RV that	follows	a continuous distribution? Explain.
+
+Very low.
+
+Since continous has an infinity of possibilities even for a small concentration and exact value 
+is hard to hit spot on.
+
+17. Draw	and	describe	the	normal	distribution.
+
+It is a symmetric mountain
+
+18. What	is	a	Z-value?	How	do	we	calculate	it?
+
+The Z value describe the chance that an observation at that Z and futher away from the center 
+will happen, based on the mean and standard deviation, where the mean is the center.
+
+The standard deviation correspond to 1 Z 
+
+19. What	is	the	68-95-99.7	rule?
+
+Rule used to remember to remember the first 3 standard deviations boundaries.
+
+20. What	is	a	Q-Q	plot?	Why do	we	use	it?
+
+The Q-Q plot is a graph which is liniar for the normal distributions and shows the values 
+according to the normal distribution.
+
+21. Describe the geometric distribution.
+
+It describes the probability for getting x success in n trials
+
+22. What is	a Bernoulli	RV?
+
+1 / p = average for success
+
+23. Describe	the	binomial	distribution.
+
+It describes the chance from a point x to an extreme (max or min) given a mean and a standard deviation
+and n
+
+
+24. What	is	a	sampling	distribution?
+
+It is a subset of random entries from the a whole population of which nearly shows the whole population
+but shows with a sample.
+
+25. Explain	the	Central	Limit	Theorem.
+
+Says that a sample is large enough if any of the following is true:
+
+	+ Distribution is nearly normal
+	+ If unimodel etc, sample size less than 15, symmetric, unimodal and no outliers
+	+ Skewed with between 16 to 40 n
+	+ Sample size greater than 40
+
+26. What	is	a	Confidence	Interval	and	how	is	it	calculated?
+
+Point estimate +/- Z * Standard error
+
+27. Explain	the	process	of hypothesis testing for population mean.
+
+Null Hypthesis and Alternative Hypthesis
+
+28. What	is	a	p-value?
+
+the value corresponding to how many standard errors away the null hypothesis is from the data
+
+29. What	types	of	errors	you	can	make	in	hypothesis	testing?	Explain	them.
+
+Type 1 error: If reject null hyp if it was true
+	denoted by Alpha
+
+Type 2 error: If accept null hyp if it was false
+	denoted by Beta
+
+30. What	are	the	two	main	conditions	that	statistical	tools	rely	on?
+
+
+
+31. What	is	a	power	of	a	test?
+
+The probability that it correctly reject the null Hypthesis then it is false.
+
+32. What	are	statistical	and	practical	significance?
+
+When it is decided it is unlikely to have happened by chance
+
+
+33. What	is	paired	data?
+
+Paired data is when the same person makes multiple tests and those is compared
+
+For paired data often the difference of the data is taken
+
+34. What differs	in	the	inference	methods that we	use	for	difference	of	paired and non-paired	data?
+
+
+35. What	inference	methods	can	we	use	for	comparing	two	groups	of	numerical	data?	What	about	3+	groups?	How	do	we	calculate	variance	for	each	case?	Explain	the	inference	processes	and	test	statistics	for	each	case. What	are	the	conditions	for	each	method?
+
+
+
+36. Explain the	inference	method	for	categorical	data	for	single	proportion.  What	are	the	conditions	for	this	inference	method?
+
+
+
+37. Homework	folder:	Explain	homework	X.	How	did	you	discover	Y?
