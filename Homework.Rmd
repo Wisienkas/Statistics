@@ -1097,7 +1097,8 @@ November 27, 2009 (the day after Thanksgiving), had been marked by somewhat lowe
 
 #### a. We are 95% confident that the average spending of these 436 American adults is between $80.31 and $89.11.
 
-False
+False, Since the data is very right skewed the rule for normality is
+not validated.
 
 #### b. This confidence interval is not valid since the distribution of spending in the sample is right skewed
 
@@ -1125,7 +1126,27 @@ True
 
 ### <a name="4.32"></a>4.32 - Speed reading, Part 1 ###
 
+A company offering online speed reading courses claims that students who take their courses show a 5 times (500%) increase in the number of words they can read in a minute without losing comprehension. A random sample of 100 students yielded an average increase of 415% with a standard deviation of 220%. Is there evidence that the company's claim is false?
 
+#### a. Are conditions for inference satisfied?
+
+The sample size is over 30 as a general rule of thumb
+
+The claim is inside the confident interval
+
+so yes.
+
+#### b.  Perform a hypothesis test evaluating if the company's claim is reasonable or if the true average improvement is less than 500%. Make sure to interpret your response in context of the hypothesis test and the data. Use ?? = 0.025.
+
+````{r}
+{
+  
+}
+```
+
+#### c. Calculate a 95% confidence interval for the average increase in the number of words students can read in a minute without losing comprehension.
+
+#### d. Do your results from the hypothesis test and the confidence interval agree? Explain.
 
 ==================================
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
