@@ -85,7 +85,7 @@ c. Do the data provide convincing evidence that there is a real pain reduciton f
 Cigarette Habits    | gender  | age   | marital   | grossIncome   | smoke | amtWeekend  | amtWeekdays 
 --------------------|---------|-------|-----------|---------------|-------|-------------|------------
 1                   | Female  | 42    | Single    | Under £ 2600  | yes   | 12 cig/day  | 12 cig/day
-2                   | Male    | 44    | Single    | $ 10400 - 15600 | No  | N/A         | N/A
+2                   | Male    | 44    | Single    | £ 10400 - 15600 | No  | N/A         | N/A
 3                   | Male    | 53    | Married   | Above £ 36400   | Yes | 6 cig/day   | 6 cig/day
 .                   | .       | .     | .         | .               | .   | .           | .
 .                   | .       | .     | .         | .               | .   | .           | .
