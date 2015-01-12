@@ -47,6 +47,11 @@ output: html_document
 * [Inference for Numerical Data 2](#IfND2)  
     + [5.30 - Fuel efficiency of manual and automatic cars, Part 1](#5.30)
     + [5.40 - Work hours and education, Part 3](#5.40)
+* [Inference for Categorical Data](#IfCD)
+    + [6.12 - Legalization of marijuana, Part 1](#6.12)
+    + [6.14 - The Civil War](#6.14)
+    
+
 
 # Homework
 
@@ -1563,9 +1568,95 @@ consider educational attainment levels for all 1,172 respondents at once instead
 them into two groups. Below are the distributions of hours worked by educational attainment and
 relevant summary statistics that will be helpful in carrying out this analysis.
 
-educational attainment  | Less than HS |  HS | Jr Coll | Bachelor's | Graduate | Total 
+
+educational attainment  | Less than HS |  HS | Jr Coll | Bachelor's | Graduate | Total
 ------------------------|--------------|-----|---------|------------|----------|--------
 Mean                    |     38.67    |39.6 |  41.39  |    42.55   |   40.85  | 40.45
 SD                      |     15.81    |14.97|  18.1   |    13.62   |   15.51  | 15.17
 n                       |     121      |546  |    97   |    253     |   155    | 1,172
+
+    
+## <a name="IfCD"></a>Inference for Categorical Data ##
+
+__Assignment Overview__:
+
+* [6.12 - Legalization of marijuana, Part 1](#6.12)
+* [6.14 - The Civil War](#6.14)
+
+### <a name="6.12"></a>6.12 - Legalization of marijuana, Part 1 ###
+
+The 2010 General Social Survey asked 1,259 US residents: “Do you think the use of marijuana should be made legal, or not?” 48% of the respondents said it should be made legal
+
+#### a. Is 48% a sample statistic or a population parameter? Explain.
+
+It is a sample statistics. The population parameter would be the result of all US residents.
+
+#### b. Construct a 95% confidence interval for the proportion of US residents who think marijuana should be made legal, and interpret it in the context of the data.
+
+```{r}
+{
+  p <- 0.48
+  
+  size <- 1259
+  
+  ME <- 1.96 * sqrt(p * (1 - p) / size)
+  
+  # 0.4524028   0.5075972
+  c(p - ME, p + ME)
+}
+```
+
+#### c. A critic points out that this 95% confidence interval is only accurate if the statistic follows a normal distribution, or if the normal model is a good approximation. Is this true for these data? Explain.
+
+The data has 10 failure and successes 
+
+it also has over 30 entries
+
+So it would be a normal distribution
+
+#### d.  A news piece on this survey’s findings states, “Majority of Americans think marijuana should be legalized.” Based on your confidence interval, is this news piece’s statement justified?
+
+Since the interval covers a value over 50 % it can not be rejected that a majority of americans think marijuana should be legalized
+
+### <a name="6.14"></a>6.14 - The Civil War ### 
+
+A national survey conducted in 2011 among a simple random sample of 1,507 adults shows that 56% of Americans think the Civil War is still relevant to American politics and political life.
+
+#### a. Conduct a hypothesis test to determine if these data provide strong evidence that the majority of the Americans think the Civil War is still relevant.
+
+* H0: A majority of americans think the civil war is still relevant
+* H1: Less than a majority of americans think the civil war is still relevant
+
+#### b. Interpret the p-value in this context.
+
+```{r}
+{
+  p <- 0.56
+  
+  size <- 1507
+  
+  SE <- sqrt(p * (1 - p) / size)
+  
+  pnorm(0.5, mean = p, sd = SE)
+}
+```
+
+#### c. Calculate a 90% confidence interval for the proportion of Americans who think the Civil War is still relevant. Interpret the interval in this context, and comment on whether or not the confidence interval agrees with the conclusion of the hypothesis test
+
+```{r}
+{
+  p <- 0.56
+  
+  size <- 1507
+  
+  ME <- 1.645 * sqrt(p * (1 - p) / size)
+  
+  # 0.5389656    0.5810344
+  c(p - ME, p + ME)
+}
+```
+
+Using the 90 % confident level, it is clear that the null hypothesis can not be rejected.
+
+It is Very very very very unlikely that the Null Hypothesis would be rejected as the p value was exceptional small. 
 
