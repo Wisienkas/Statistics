@@ -1,0 +1,187 @@
+---
+title: "Formulas"
+author: "Nikolaj Schaldemose Reibke"
+date: "Monday, January 12, 2015"
+output: html_document
+---
+
+# Table of content
+
+* [Mean/Average](#mean/average)
+* [Standard Deviation](#standard_deviation)
+* [variance](#variance)
+* [Median](#median)
+* [Central Limit Theorem](#clt)
+* [Confident Interval](#confident_interval)
+* [Margin of Error](#margin_of_error)
+
+
+# <a name="mean/average"></a>Mean/Average
+
+The Mean/Average is the used in statistics to get a sense about
+where the center of the sample lies and also where the true 
+central lies.
+
+Formula:
+
+````{r}
+{
+  
+  sum <- 0
+  
+  # Getting random sample of size "size"
+  size <- 100
+  mean = 50
+  sd = 7.94
+  
+  sample <- rnorm(n = 100, mean = mean, sd = sd)
+  
+  
+  # If done from ground
+  for(s in sample){
+    sum <- sum + s
+  }
+  sum <- sum / size
+}
+  head(sample)
+{  
+  cat("mean calculated: ")
+  print(sum)
+} 
+  print("Summary of set")
+  summary(sample)
+
+```
+
+# <a name="standard_deviation"></a>Standard Devation
+
+The Standard Deviation is used to measure how likely an observation
+is to occour based on the sample it has been calculated from. 
+
+It also collide with the 66, 95, 99.7 rule:
+
+1 Standard deviation away will contain roughly 66 % of the samples
+2 Standard deviation away will contain roughly 95 % of the samples
+3 Standard deviation away will contain roughly 99.7 % of the samples
+
+Formula:
+
+````{r}
+{
+  my_sd = 0
+  
+  # Getting random sample of size "size"
+  size <- 100
+  mean = 50
+  sd = 7.94
+  
+  sample <- rnorm(n = 100, mean = mean, sd = sd)
+  
+  # Calculating sd from ground
+  
+  my_mean <- mean(sample)
+  
+  for(s in sample){
+    my_sd <- (s - my_mean)^2 + my_sd 
+  }
+  # size - 1 is because on it is a sample
+  my_sd <- sqrt(my_sd / (size - 1))
+}
+  head(sample)
+{  
+  cat("Standard Deviation calculated: ")
+  print(my_sd)
+} 
+  print("sd of set")
+  sd(sample)
+
+```
+# <a name="variance"></a>Variance
+
+The variance is very close to the standard deviation.
+The constant factor between the variance and standard deviation 
+is the following
+
+_variance = (standard deviation)^2_
+AND
+_sqrt(variance) = standard deviation_
+
+# <a name="median"></a>Median
+
+The median is the center of an ascending ordered list
+
+So the median of (3,5,9) is 5 as 5 is the center value
+and the list is ordered in ascending order.
+
+# <a name="clt"></a>Central Limit Theorem
+
+The central limit theorem are saying that as the size increases
+it is more likely to be have a normal distribution
+
+Conditions:
+
+* Independence: Sampled observations must be independent 
+  + random sampling/is used
+  + if sampling without replacement, n < 10% of the population
+* Sample size/skew Either the population is normal, or if the population distribution is skewed, the sample size is large
+  + the more skewed the population, the larger sample size we need for the CLT to apply
+  + For moderately skewed distributions n > 30 is widely used rule of thumb
+  + Assume that sample mirrors(reflects) the population
+
+Formula:
+
+
+pointEstimate approx N (mean = sampleMean, SE = sd / sqrt(n))
+
+# <a name="standard_error"></a>Standard Error #
+
+The Standard error are used in the following formulas.
+It is defined as this:
+
+SE = sd / sqrt(n), 
+Where:
+
+* SE is standard error
+* sd is standard deviation
+* n is size of sample
+
+# <a name="confident_interval"></a>Confident Interval #
+
+The confident interval is used to say how much another sampling
+is likely to have it's point estimate inside the confident zone.
+
+The general formula for getting the confident interval:
+
+pe +/- xz * SE -> (pe - xz * SE, pe + xz * SE)
+Where:
+
+* pe is Point Estimate
+* xz is how many xz away, so for 95% confident inteval xz would be 1.96
+* SE is Standard Error
+
+the xz * SE can also be called _margin of error_
+
+# <a name="margin_of_error"></a>Margin of Error
+
+From Confident Interval:
+
+pe +/- xz * SE
+
+the xz * SE can also be called _margin of error_
+
+The margin of error changes as the confience level changes.
+
+The value that can be changed is *xz*
+
+The most common confident levels:
+
+* 90 %
+* 95 %
+* 98 %
+* 99 %
+
+For 95 % confident level a xz = 1.96 is used
+
+The Z is actually the Z used in the standard distribution, so any
+confident level can be chosen from that.
+
