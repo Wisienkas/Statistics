@@ -1204,7 +1204,69 @@ __Assignment Overview__:
 
 ### <a name="4.38"></a>4.38 - Stats final scores ###
 
+Each year about 1500 students take the introductory statistics course at a large university. This year scores on the final exam are distributed with a median of 74 points, a mean of 70 points, and a standard deviation of 10 points. There are no students who scored above 100 (the maximum score attainable on the final) but a few students scored below 20 points.
+ 
+#### a.  Is the distribution of scores on this final exam symmetric, right skewed, or left skewed?
 
+Would appear to be left skewed as the mean is lesser than the median, and it is nearly half a standard deviation less. 
+
+#### b.  Would you expect most students to have scored above or below 70 points?
+
+Since the median is 74, more than half has certainly scored above 70 points.
+
+#### c.  Can we calculate the probability that a randomly chosen student scored above 75 using the normal distribution?
+
+Since the sample is over the size of 30, it could be done according to the slides.
+
+#### d.  What is the probability that the average score for a random sample of 40 students is above 75?
+
+````{r}
+{
+  # What we need to find is how many standard errors away the result is.
+  
+  pe <- 70
+  sd <- 10
+  
+  size <- 1500
+  
+  randomAverage = 75
+  
+  se <- sd / sqrt(40)
+  
+  # SE's from 75 to 70
+  
+  range <- (randomAverage - pe) / se
+  
+  # Times 2 because it is onetailed, We are not interested in whats less than
+  pnorm(pe, mean = randomAverage, sd = se) * 2
+}
+```
+
+#### e.  How would cutting the sample size in half affect the standard error of the mean?
+
+````{r}
+{
+  # What we need to find is how many standard errors away the result is.
+  
+  pe <- 70
+  sd <- 10
+  
+  size <- 1500
+  
+  randomAverage = 75
+  
+  se <- sd / sqrt(20)
+
+  # SE's from 75 to 70
+  
+  range <- (randomAverage - pe) / se
+  
+  # Times 2 because it is onetailed, We are not interested in whats less than
+  pnorm(pe, mean = randomAverage, sd = se) * 2
+}
+```
+
+As seen the probability increases. Additionally the Standard error has been increased as a larger sample has a lower standard error.
 
 ### <a name="4.46"></a>4.46 - Unemployment and relationship problems ###
 
