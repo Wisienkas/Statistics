@@ -44,7 +44,9 @@ output: html_document
     + [5.1 - Global warming, Part 1](#5.1)
     + [5.14 - Child care hours, Part 1](#5.14)
     + [5.20 - Fuel efficiency of Prius](#5.20)
-
+* [Inference for Numerical Data 2](#IfND2)  
+    + [5.30 - Fuel efficiency of manual and automatic cars, Part 1](#5.30)
+    + [5.40 - Work hours and education, Part 3](#5.40)
 
 # Homework
 
@@ -1503,4 +1505,67 @@ Using a 95 % confident level
 }
 ```
 
+## <a name="IfND2"></a>Inference for Numerical Data 2 ## 
+
+__Assignment Overview__:
+
+* [5.30 - Fuel efficiency of manual and automatic cars, Part 1](#5.30)
+* [5.40 - Work hours and education, Part 3](#5.40)
+
+### <a name="5.30"></a>5.30 - Fuel efficiency of manual and automatic cars, Part 1 ### 
+
+Each year the US Environmental Protection Agency (EPA) releases fuel economy data on cars manufactured in that year. Below are summary statistics on fuel efficiency (in miles/gallon) from random samples of cars with manual and automatic transmissions manufactured in 2012. Do these data provide strong evidence of a difference between the average fuel efficiency of cars with manual and automatic transmissions in terms of their average city mileage? Assume that conditions for inference are satisfied.
+
+_Figures in the book on page: 256._
+
+_Sketched data from book figure_
+
+Table | Automatic | Manual
+------|-----------|--------
+Mean  |   22.92   | 27.88
+SD    |    5.29   |  5.01
+n     |   26      | 26
+
+Also assuming that the 26 in the sample pool for both samples are the same car apart from the gearing.
+
+* H0: Where is no difference in miles per galon a car drives regardless gearing
+* H1: Where is a difference in miles per galon a car drives regardless gearing
+
+```{r}
+{
+  diff <- 22.92 - 27.88
+  
+  sd_a <- 5.29
+  sd_m <- 5.01
+  
+  size <- 26
+  
+  se <- sqrt((sd_a^2 / size) + (sd_m^2 / size))
+  
+  t <- diff / se
+  
+  if(pt(q = t, df = size) < 0.050) {
+    print("The Null hypothesis is rejected")
+  } else {
+    print("Failed to reject null hypothesis")
+  }
+}
+```
+
+### <a name="5.40"></a>5.40 - Work hours and education, Part 3 ### 
+
+In Exercises 5.8 and 5.10 you worked with data
+from the General Social Survey in order to compare the average number of hours worked per week
+by US residents with and without a college degree. However, this analysis didn’t take advantage of
+the original data which contained more accurate information on educational attainment (less than
+high school, high school, junior college, Bachelor’s, and graduate school). Using ANOVA, we can
+consider educational attainment levels for all 1,172 respondents at once instead of re-categorizing
+them into two groups. Below are the distributions of hours worked by educational attainment and
+relevant summary statistics that will be helpful in carrying out this analysis.
+
+educational attainment  | Less than HS |  HS | Jr Coll | Bachelor's | Graduate | Total 
+------------------------|--------------|-----|---------|------------|----------|--------
+Mean                    |     38.67    |39.6 |  41.39  |    42.55   |   40.85  | 40.45
+SD                      |     15.81    |14.97|  18.1   |    13.62   |   15.51  | 15.17
+n                       |     121      |546  |    97   |    253     |   155    | 1,172
 
