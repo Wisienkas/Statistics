@@ -1429,7 +1429,7 @@ care of their children under age 6. Also comment on whether this interval sugges
 difference between the two population parameters. You may assume that conditions for inference
 are satisfied
 
-````{r}
+```{r}
 {
   size_f <- 487
   size_m <- 312
@@ -1449,11 +1449,58 @@ It would appear that women in general use way more time with their children less
 
 ### <a name="5.20"></a>5.20 - Fuel efficiency of Prius ### 
 
-Fueleconomy.gov, the official US government source for fuel
-economy information, allows users to share gas mileage information on their vehicles. The his-
-togram below shows the distribution of gas mileage in miles per gallon (MPG) from 14 users who
-drive a 2012 Toyota Prius. The sample mean is 53.3 MPG and the standard deviation is 5.2 MPG.
-Note that these data are user estimates and since the source data cannot be verified, the accuracy
-of these estimates are not guaranteed. 
+Fueleconomy.gov, the official US government source for fueleconomy information, allows users to share gas mile age information on their vehicles. The histogram below shows the distribution of gas mile age in miles per gallon (MPG) from 14 users whodrive a 2012 Toyota Prius. The sample mean is 53.3 MPG and the standard deviation is 5.2 MPG. Note that these data are user estimates and since the source data cannot be verified, the accuracy of these estimates are not guaranteed.
+
+#### a. We would like to use these data to evaluate the average gas mileage of all 2012 Prius drivers. Do you think this is reasonable? Why or why not?
+
+Since there is no garantee that the data is even valid or accurate at all it would not a reasonable evaluation. Also only 14 users have submitted data,
+which increasingly make it hard to validate as the sample size is that low. 
+
+#### b. The EPA claims that a 2012 Prius gets 50 MPG (city and highway mileage combined). Do these data provide strong evidence against this estimate for drivers who participate on fueleconomy.gov? Note any assumptions you must make as you proceed with the test.
+
+Assuming the data is in a standard distribution and the data is accurate.
+
+H0: The drivers on fueleconomy.gov is not wrong
+H1: The drivers on fueleconomy.gov is wrong
+
+Using a 95 % confident level
+
+```{r}
+{
+  size <- 14
+  
+  pe <- 53.3
+  sd <- 5.2
+  
+  claim <- 50
+  
+  se <- 5.2 / sqrt(14)
+  
+  ci <- c(pe - 1.96 * se, pe + 1.96 * se)
+  
+  if(ci[1] < claim && ci[2] > claim){
+    print("Null Hypothesis can not be rejected")
+  } else {
+    print("Null hypothesis can be rejected")  
+  }
+}
+```
+
+#### c.  Calculate a 95% confidence interval for the average gas mileage of a 2012 Prius by drivers who participate on fueleconomy.gov.
+
+```{r}
+{
+  size <- 14
+  
+  pe <- 53.3
+  sd <- 5.2
+  
+  claim <- 50
+  
+  se <- 5.2 / sqrt(14)
+  
+  c(pe - 1.96 * se, pe + 1.96 * se)
+}
+```
 
 
