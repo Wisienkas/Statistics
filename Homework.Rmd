@@ -1130,23 +1130,65 @@ A company offering online speed reading courses claims that students who take th
 
 #### a. Are conditions for inference satisfied?
 
-The sample size is over 30 as a general rule of thumb
+The sample size is over 30 as a general rule of thumb(slides)
+This means that it satisfies the central limit theorem
 
-The claim is inside the confident interval
+so *yes*.
 
-so yes.
+#### b.  Perform a hypothesis test evaluating if the company's claim is reasonable or if the true average improvement is less than 500%. Make sure to interpret your response in context of the hypothesis test and the data. Use Alpha = 0.025.
 
-#### b.  Perform a hypothesis test evaluating if the company's claim is reasonable or if the true average improvement is less than 500%. Make sure to interpret your response in context of the hypothesis test and the data. Use ?? = 0.025.
+* H0: The Online course can increase the words per minute a person can read and comprehend by 500 %
 
-````{r}
-{
-  
-}
-```
+* H1: The Online course can not Increase the words per minute a person can read and comprehend by 500 %
 
 #### c. Calculate a 95% confidence interval for the average increase in the number of words students can read in a minute without losing comprehension.
 
+````{r}
+{
+  cl <- qnorm(1 - 0.025)
+  pe <- 415
+  sd <- 220
+  
+  claim <- 500
+  
+  size = 100
+  
+  SE <- sd / sqrt(size)
+  # using a 95% interval
+  Z <- 1.96
+  
+  ci <- c(pe - cl * SE, pe + cl * SE)
+  
+  print(ci)
+}
+```
+
 #### d. Do your results from the hypothesis test and the confidence interval agree? Explain.
+
+````{r}
+{
+  cl <- qnorm(1 - 0.025)
+  pe <- 415
+  sd <- 220
+  
+  claim <- 500
+  
+  size = 100
+  
+  SE <- sd / sqrt(size)
+  # using a 95% interval
+  Z <- 1.96
+  
+  ci <- c(pe - cl * SE, pe + cl * SE)
+  
+  if(claim > ci[1] && claim < ci[2]){
+    print("The Null hypothesis cannot be rejected")
+  } else {
+    print("The Null hypothesis can be rejected")
+  }
+  
+}
+```
 
 ==================================
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
