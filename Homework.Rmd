@@ -36,6 +36,10 @@ output: html_document
     + [4.4 - Heights of adults](#4.4)
     + [4.12 - Thanksgiving spending, Part 1](#4.12)
     + [4.32 - Speed reading, Part 1](#4.32)
+* [Foundations for inference 2](#FfI2)
+    + [4.38 - Stats final scores](#4.38)
+    + [4.46 - Unemployment and relationship problems](#4.46)
+    + [4.48 - True or false](#4.48)
 
 # Homework
 
@@ -1190,19 +1194,20 @@ so *yes*.
 }
 ```
 
-==================================
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## <a name="FfI2"></a>Foundations for inference 2 ## 
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+__Assignment Overview__:
 
-```{r}
-summary(cars)
-```
+* [4.38 - Stats final scores](#4.38)
+* [4.46 - Unemployment and relationship problems](#4.46)
+* [4.48 - True or false](#4.48)
 
-You can also embed plots, for example:
+### <a name="4.38"></a>4.38 - Stats final scores ###
 
-```{r, echo=FALSE}
-plot(cars)
-```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+### <a name="4.46"></a>4.46 - Unemployment and relationship problems ###
+
+
+### <a name="4.48"></a>4.48 - True or false ###
+
