@@ -1429,9 +1429,31 @@ care of their children under age 6. Also comment on whether this interval sugges
 difference between the two population parameters. You may assume that conditions for inference
 are satisfied
 
+````{r}
+{
+  size_f <- 487
+  size_m <- 312
+  
+  pi <- 31 - 16
+  
+  sd_f <- 31
+  sd_m <- 21
+  
+  se <- sqrt((sd_f^2 / size_f) + (sd_m^2 / size_m))
+  
+  c(pi - 1.96 * se, pi + 1.96 * se)
+}
+```
 
+It would appear that women in general use way more time with their children less than age 6
 
 ### <a name="5.20"></a>5.20 - Fuel efficiency of Prius ### 
 
+Fueleconomy.gov, the official US government source for fuel
+economy information, allows users to share gas mileage information on their vehicles. The his-
+togram below shows the distribution of gas mileage in miles per gallon (MPG) from 14 users who
+drive a 2012 Toyota Prius. The sample mean is 53.3 MPG and the standard deviation is 5.2 MPG.
+Note that these data are user estimates and since the source data cannot be verified, the accuracy
+of these estimates are not guaranteed. 
 
 
