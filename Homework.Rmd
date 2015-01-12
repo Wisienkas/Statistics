@@ -40,6 +40,11 @@ output: html_document
     + [4.38 - Stats final scores](#4.38)
     + [4.46 - Unemployment and relationship problems](#4.46)
     + [4.48 - True or false](#4.48)
+* [Inference for Numerical Data 1](#IfND1)
+    + [5.1 - Global warming, Part 1](#5.1)
+    + [5.14 - Child care hours, Part 1](#5.14)
+    + [5.20 - Fuel efficiency of Prius](#5.20)
+
 
 # Homework
 
@@ -88,12 +93,12 @@ c. Do the data provide convincing evidence that there is a real pain reduciton f
 
 Cigarette Habits    | gender  | age   | marital   | grossIncome   | smoke | amtWeekend  | amtWeekdays 
 --------------------|---------|-------|-----------|---------------|-------|-------------|------------
-1                   | Female  | 42    | Single    | Under £ 2600  | yes   | 12 cig/day  | 12 cig/day
-2                   | Male    | 44    | Single    | £ 10400 - 15600 | No  | N/A         | N/A
-3                   | Male    | 53    | Married   | Above £ 36400   | Yes | 6 cig/day   | 6 cig/day
+1                   | Female  | 42    | Single    | Under Â£ 2600  | yes   | 12 cig/day  | 12 cig/day
+2                   | Male    | 44    | Single    | Â£ 10400 - 15600 | No  | N/A         | N/A
+3                   | Male    | 53    | Married   | Above Â£ 36400   | Yes | 6 cig/day   | 6 cig/day
 .                   | .       | .     | .         | .               | .   | .           | .
 .                   | .       | .     | .         | .               | .   | .           | .
-1691                | Male    | 40    | Single    | £ 2600 - 5200   | Yes | 8 cig/day   | 8 cig/day
+1691                | Male    | 40    | Single    | Â£ 2600 - 5200   | Yes | 8 cig/day   | 8 cig/day
 
 a. What does each row of the matrix represent?
 
@@ -1294,7 +1299,7 @@ Determine if the following statements are true or false, and explain your reason
 
 Answer: **True**
 
-#### b. Decreasing the significance level (??) will increase the probability of making a Type 1 error.
+#### b. Decreasing the significance level (α) will increase the probability of making a Type 1 error.
 
 Answer: **False**
 
@@ -1302,7 +1307,7 @@ Correction:
 
 Decreasing the significance level gives a higher confidence interval, which increases the chance of a **type 2 error** not **type 1 error**
 
-#### c. Suppose the null hypothesis is � = 5 and we fail to reject H 0 . Under this scenario, the true population mean is 5.
+#### c. Suppose the null hypothesis is µ = 5 and we fail to reject H 0 . Under this scenario, the true population mean is 5.
 
 Answer: False
 
@@ -1322,7 +1327,7 @@ It should not add up to 1
 
 Answer: True
 
-#### f.  A cutoff of ?? = 0.05 is the ideal value for all hypothesis tests.
+#### f.  A cutoff of α = 0.05 is the ideal value for all hypothesis tests.
 
 Answer: False
 
@@ -1331,3 +1336,17 @@ Correction:
 Different kind of tests need different kind of assurance.
 
 For rocket science you wan't to be somewhat more "sure". for say.
+
+
+## <a name="IfND1"></a>Inference for Numerical Data 1 ## 
+
+__Assignment Overview__:
+
+* [5.1 - Global warming, Part 1](#5.1)
+* [5.14 - Child care hours, Part 1](#5.14)
+* [5.20 - Fuel efficiency of Prius](#5.20)
+
+### <a name="5.1"></a>5.1 - Global warming, Part 1 ### 
+### <a name="5.14"></a>5.14 - Child care hours, Part 1 ### 
+### <a name="5.20"></a>5.20 - Fuel efficiency of Prius ### 
+
