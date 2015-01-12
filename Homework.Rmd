@@ -1270,6 +1270,21 @@ As seen the probability increases. Additionally the Standard error has been incr
 
 ### <a name="4.46"></a>4.46 - Unemployment and relationship problems ###
 
+A USA Today/Gallup poll conducted between 2010 and 2011 asked a group of unemployed and underemployed Americans if they have had major problems in their relationships with their spouse or another close family member as a result of not having a job (if unemployed) or not having a full-time job (if underemployed). 27% of the 1,145 unemployed respondents and 25% of the 675 underemployed respondents said they had major problems in relationships as a result of their employment status.
+
+#### a. What are the hypotheses for evaluating if the proportions of unemployed and underemployed people who had relationship problems were different?
+
+H0: theres no difference in which unemployed and underemployed have had major problems in their relationship  with their spouse or another close family member as a result of not having a job (if unemployed) or not having a full-time job (if underemployed)
+
+H1: There is a difference in which unemployed and underemployed have had major problems in their relationship  with their spouse or another close family member as a result of not having a job (if unemployed) or not having a full-time job (if underemployed)
+
+#### b. The p-value for this hypothesis test is approximately 0.35. Explain what this means in context of the hypothesis test and the data.
+
+It means that the Null hypothesis can not be rejected. 
+
+and that based on my hypothesis would apply the following:
+
+theres no difference in which unemployed and underemployed have had major problems in their relationship  with their spouse or another close family member as a result of not having a job (if unemployed) or not having a full-time job (if underemployed)
 
 ### <a name="4.48"></a>4.48 - True or false ###
 
