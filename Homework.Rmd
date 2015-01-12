@@ -1288,3 +1288,46 @@ theres no difference in which unemployed and underemployed have had major proble
 
 ### <a name="4.48"></a>4.48 - True or false ###
 
+Determine if the following statements are true or false, and explain your reasoning. If false, state how it could be corrected.
+
+#### a. If a given value (for example, the null hypothesized value of a parameter) is within a 95% confidence interval, it will also be within a 99% confidence interval.
+
+Answer: **True**
+
+#### b. Decreasing the significance level (??) will increase the probability of making a Type 1 error.
+
+Answer: **False**
+
+Correction:
+
+Decreasing the significance level gives a higher confidence interval, which increases the chance of a **type 2 error** not **type 1 error**
+
+#### c. Suppose the null hypothesis is µ = 5 and we fail to reject H 0 . Under this scenario, the true population mean is 5.
+
+Answer: False
+
+Correction:
+
+It is likely to be 5, but could be different.
+
+#### d. If the alternative hypothesis is true, then the probability of making a Type 2 error and the power of a test add up to 1.
+
+Answer: False
+
+Correction:
+
+It should not add up to 1
+
+#### e. With large sample sizes, even small differences between the null value and the true value of the parameter, a difference often called the effect size, will be identified as statistically significant.
+
+Answer: True
+
+#### f.  A cutoff of ?? = 0.05 is the ideal value for all hypothesis tests.
+
+Answer: False
+
+Correction:
+
+Different kind of tests need different kind of assurance.
+
+For rocket science you wan't to be somewhat more "sure". for say.
