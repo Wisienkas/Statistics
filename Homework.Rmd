@@ -1575,6 +1575,45 @@ Mean                    |     38.67    |39.6 |  41.39  |    42.55   |   40.85  |
 SD                      |     15.81    |14.97|  18.1   |    13.62   |   15.51  | 15.17
 n                       |     121      |546  |    97   |    253     |   155    | 1,172
 
+So ANOVA is used to figure out if any of the categories stick out
+
+H0: The mean outcome is the same across all categories.
+H1: At least one mean is different from the others.
+
+```{r}
+{
+  dfg <- 6 - 1
+  dft <- 1172
+  dfe <- dft - dfg
+  
+  total_avg <- 40.45
+  total_sd <- 15.17
+  
+  ssg <- 121 * (38.67 - 40.45)^2
+  ssg <- (546 * (39.6 - 40.45)^2) + ssg
+  ssg <- (97 * (41.39 - 40.45)^2) + ssg
+  ssg <- (253 * (42.55 - 40.45)^2) + ssg
+  ssg <- (155 * (40.85 - 40.45)^2) + ssg
+  
+  sse <- (121 - 1) * 15.81^2
+  sse <- ((546 - 1) * 14.97^2) + sse
+  sse <- ((97 - 1) * 18.1^2) + sse
+  sse <- ((253 - 1) * 13.62^2) + sse
+  sse <- ((155 - 1) * 15.51^2) + sse
+  
+  sst <- ssg + sse
+  
+  msg <- ssg / dfg
+  mse <- sse / dfe
+  
+  # F -> 1.749451
+  msg / mse
+}
+```
+    
+Using http://www.danielsoper.com/statcalc3/calc.aspx?id=7 to calculate probability:
+
+Probability around 12 %
     
 ## <a name="IfCD"></a>Inference for Categorical Data ##
 
